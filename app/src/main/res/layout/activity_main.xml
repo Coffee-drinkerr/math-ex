@@ -28,7 +28,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:textSize="30sp"
-            android:text="right:0" />
+            android:text="right:0"
+            android:background="#57F527"/>
 
         <TextView
             android:id="@+id/wrongId"
@@ -37,7 +38,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:textSize="30sp"
-            android:text="wrong:0" />
+            android:text="wrong:0"
+            android:background="#F52727"/>
     </LinearLayout>
 
     <LinearLayout
@@ -79,29 +81,33 @@
 
             <TextView
                 android:id="@+id/num1Id"
-                android:layout_width="match_parent"
+                android:layout_width="348dp"
                 android:layout_height="127dp"
+                android:layout_gravity="center"
+                android:background="#FFA500"
                 android:gravity="center"
                 android:text="Y"
-                android:textSize="60sp" 
-                android:background="#FFA500"/>
+                android:textSize="60sp" />
 
             <TextView
                 android:id="@+id/textView4"
-                android:layout_width="match_parent"
+                android:layout_width="348dp"
                 android:layout_height="85dp"
                 android:text="x"
                 android:textSize="50dp"
+                a
+                android:layout_gravity="center"
                 />
 
             <TextView
                 android:id="@+id/num2Id"
-                android:layout_width="match_parent"
+                android:layout_width="348dp"
                 android:layout_height="127dp"
                 android:text="X"
                 android:gravity="center"
                 android:textSize="50sp"
                 android:background="#FFA500"
+                android:layout_gravity="center"
                 />
 
             <EditText
