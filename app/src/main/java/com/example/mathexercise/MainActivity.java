@@ -148,6 +148,7 @@ public class MainActivity extends AppCompatActivity {
                         count=10;
                     } else if (c) {
                         totalMark -= 10;
+                        count=20;
                     }
                     if (totalMark < 0) {
                         totalMark = 0;
