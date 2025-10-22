@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private int rightCount;
     private TextView wrong;
     private int wrongCount;
+    private int count;
     private TextView mark;
     private int totalMark;
     private TextView num1;
@@ -52,17 +53,20 @@ public class MainActivity extends AppCompatActivity {
         check = findViewById(R.id.checkId);
         answer = findViewById(R.id.answerId);
         mark = findViewById(R.id.markId);
+        count=0;
 
 
         single.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                r1 = (int) (Math.random() * 9) + 1;
-                r2 = (int) (Math.random() * 9) + 1;
-                num1.setText(r1+"");
-                num2.setText(r2+"");
-                answer.setText("");
-                s = true;
+                if(count>=0) {
+                    r1 = (int) (Math.random() * 9) + 1;
+                    r2 = (int) (Math.random() * 9) + 1;
+                    num1.setText(r1 + "");
+                    num2.setText(r2 + "");
+                    answer.setText("");
+                    s = true;
+                }
             }
         });
 
@@ -70,24 +74,28 @@ public class MainActivity extends AppCompatActivity {
         till20.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                r1 = (int) (Math.random() * 11) + 10;
-                r2 = (int) (Math.random() * 9) + 1;
-                num1.setText(r1 + "");
-                num2.setText(r2 + "");
-                answer.setText("");
-                t = true;
+                if (count >= 10) {
+                    r1 = (int) (Math.random() * 11) + 10;
+                    r2 = (int) (Math.random() * 9) + 1;
+                    num1.setText(r1 + "");
+                    num2.setText(r2 + "");
+                    answer.setText("");
+                    t = true;
+                }
             }
         });
 
         challenge.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                r1 = (int) (Math.random() * 100) + 1;
-                r2 = (int) (Math.random() * 100) + 1;
-                num1.setText(r1+"");
-                num2.setText(r2+"");
-                answer.setText("");
-                c = true;
+                if(count>=20) {
+                    r1 = (int) (Math.random() * 100) + 1;
+                    r2 = (int) (Math.random() * 100) + 1;
+                    num1.setText(r1 + "");
+                    num2.setText(r2 + "");
+                    answer.setText("");
+                    c = true;
+                }
             }
         });
 
@@ -111,8 +119,10 @@ public class MainActivity extends AppCompatActivity {
                     answer.setText("");
                     if (s) {
                         totalMark += 2;
+                        count++;
                     } else if (t) {
                         totalMark += 5;
+                        count++;
                     } else if (c) {
                         totalMark += 10;
                     }
@@ -132,8 +142,10 @@ public class MainActivity extends AppCompatActivity {
                     answer.setText("");
                     if (s) {
                         totalMark -= 2;
+                        count=0;
                     } else if (t) {
                         totalMark -= 5;
+                        count=10;
                     } else if (c) {
                         totalMark -= 10;
                     }
